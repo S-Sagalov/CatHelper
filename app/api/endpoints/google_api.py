@@ -8,7 +8,6 @@ from app.api.services.google_api import (spreadsheets_create,
 from app.core.db import get_async_session
 from app.core.google_client import get_service
 from app.core.user import current_superuser
-
 from app.crud.charity_project import charity_project_crud
 
 router = APIRouter()
@@ -28,6 +27,5 @@ async def get_closed_projects_table(
                                     projects,
                                     wrapper_services)
 
-    return {
-        'ссылка на документ':
-            f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}'}
+    return ('Ссылка на ваш документ: '
+            f'https://docs.google.com/spreadsheets/d/{spreadsheet_id}')
